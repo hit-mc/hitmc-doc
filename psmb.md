@@ -2,7 +2,6 @@
 
 ## 实现原理
 
-
 ```
           PSMB-Server (消息队列)
     /     |                |         \
@@ -15,8 +14,7 @@ go-cqhttp
 腾讯服务器
 ```
 
-## 复制服务端后，通常需要更改psmb的设置。
-
+## 复制服务端后，通常需要更改 psmb 的设置。
 
 ```
 ❯ ll
@@ -70,6 +68,7 @@ drwxrws---+ 2 mc mc   85 Sep  2 22:52 task
 -rw-rw----+ 1 mc mc   82 Sep  2 22:52 timed_quick_backup_multi.json
 drwxrws---+ 2 mc mc   25 Sep  2 22:52 where_is
 ```
+
 ### 内容
 
 ```

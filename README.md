@@ -1,79 +1,39 @@
 # HITMC - Server
 
-## 登陆
+您好，这里是服务器运维手册的快速导航页。
 
-进入：
+## 快速索引
 
-```zsh
-sudo -i -u mc -g mc
-# 这里输入你的密码
-```
+- [PSMB 文档](./psmb.md) 该文档为 PSMB 的原理介绍
+- [Review Policy](./review.md) 该文档为审核用的规则
+- [服务器维护文档](./server.md) 该文档为服务器维护所使用的杂项事务文档
 
+## 为什么编写这个手册？
 
-## 日常管理
+### 对权力的敬重
 
-### 目录布局
+您能看到这里代表着运维组与开发组成员已经充分相信你的能力，因此对您赋予了足够的权力
 
-```
-❯ tree -L 1
-.
-├── hdd -> /var/hdd_store/srv/minecraft # 机械硬盘储存
-├── hitmc                               # 各种服务器本体
-├── new_bot                             # QQ 机器人
-├── psmb                                # PSMB - 机器人消息队列
-├── README.md                           # 你现在看的这个文件
-├── scripts                             # 脚本
-└── venv                                # Python 虚拟环境
+我们相信权力是强大的，因此我们践行 sudo 的训诫
 
-6 directories, 1 file
-```
+> ＃1）尊重他人的隐私。
+>
+> ＃2）在执行命令前要三思。
+>
+> ＃3）强大的力量与巨大的责任是无法分割的。
 
+考虑到大部分人员为业余人员，且没有系统学习过专业知识，针对这种情况我们设计了一个用于审核操作的流程。
 
-### 服务器启动、管理
+这个流程考虑到了如下内容
 
-启动：
+- 未来产生失误时对以前的思路与操作进行回顾
+- 向玩家公开流程
+- 为后来人的学习提供资料
 
-```zsh
-sudo -u mc -g mc /srv/minecraft/scripts/start.sh
-```
+### 对用户、其他运维以及历史与知识的尊敬
 
-进入控制台：
+在历史的不断前进中人类积累了繁比群星的瑰丽知识宝库，我们虽然渺小但是我们也会在不断地进步中积累属于我们的知识，因此我们选择记录下我们运维所用到的知识。
 
-```zsh
-sudo -u mc -g mc /srv/minecraft/scripts/attach.sh
-```
+同时作为运维组与开发组，我们的操作会影响到其他运维、其他玩家的直接体验，因此我们选择公开的流程向其他人告知。
 
-
-控制台使用 tmux 进行管理，tmux的键盘操作可以参考:
-
-https://github.com/tmux/tmux/wiki (en)
-
-https://www.ruanyifeng.com/blog/2019/10/tmux.html (zh_CN)
-
-### 禁止的操作
-
-#### chmod 777
-
-请不要将任何目录或文件权限改为 777
-
-
-Unix 权限 https://wiki.archlinux.org/title/File_permissions_and_attributes (en)
-
-## FAQ
-
-
-### 我 cp 过来了一个目录 （或通过 SFTP 上传了一个目录），权限不对怎么办？
-
-首先参考 Unix 权限：
-
-https://wiki.archlinux.org/title/File_permissions_and_attributes (en)
-
-
-通常 cp / SFTP / scp / rsync 过来的目录带有原来的权限，你可以用
-
-```zsh
-chmod g+w <folder>
-```
-
-来使得同组用户也具有写入权限
-
+为了达到记录的目的，我们选择为每个需要运维的部分写下文档。
