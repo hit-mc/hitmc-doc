@@ -14,6 +14,33 @@ go-cqhttp
 腾讯服务器
 ```
 
+## 全新安装 MCDR 框架 （不推荐）
+
+MCDR 可以通过拷贝其他服务器配置，然后改 `server` 目录下的内容进行配置，如果直接拷贝的话可以直接跳到**MCDR插件配置文件**。接下来
+
+### 拷贝其他目录下的plugin目录
+
+```
+python -m mcdreforged init
+```
+
+删除原有的空 `plugin` 目录
+
+```
+rmdir plugin
+```
+
+```
+cp -rp ../survival/plugin .
+```
+
+
+### 拷贝其他目录
+
+`config` `config.yml` `permission.yml` 都需要拷贝过来
+
+~~所以为什么不直接拷贝所有然后改server~~
+
 ## 复制服务端后，通常需要更改 psmb 的设置。
 
 ```
